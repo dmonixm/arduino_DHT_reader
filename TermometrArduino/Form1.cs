@@ -16,6 +16,7 @@ namespace TermometrArduino
 
         private String[] ports;
         private DialogResult result;
+        private SerialPort serialPort;
         public Form1()
         {
             
@@ -48,6 +49,50 @@ namespace TermometrArduino
             boundRate.Visible = true;
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void boundRate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comPorList.SelectedIndex >= 0) {
+                serialPort = new SerialPort(comPorList.SelectedValue.ToString());
+
+                serialPort.BaudRate =  Int32.Parse(boundRate.SelectedValue.ToString());
+                serialPort.Parity = Parity.None;
+                serialPort.StopBits = StopBits.One;
+                serialPort.DataBits = 8;
+                serialPort.Handshake = Handshake.None;
+                serialPort.RtsEnable = true;
+                serialPort.DataReceived += new SerialDataReceivedEventHandler(dataHandler);
+
+                try
+                {
+                    serialPort.Open();
+                }
+                catch (Exception ex) {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void dataHandler(object sender, SerialDataReceivedEventArgs e) {
+            SerialPort serial = (SerialPort)sender;
+            string data = serial.ReadExisting();
+            processRecivedData(data);
+        }
+
+        private void processRecivedData(String data) {
+            String[] split = data.Split(new [] {";"}, StringSplitOptions.RemoveEmptyEntries);
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (serialPort != null && serialPort.IsOpen) {
+                serialPort.Close();
+            }
+        }
 
 
     }

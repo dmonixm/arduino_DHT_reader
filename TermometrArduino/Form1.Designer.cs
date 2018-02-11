@@ -64,6 +64,7 @@
             this.boundRate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.boundRate.Size = new System.Drawing.Size(100, 21);
             this.boundRate.TabIndex = 1;
+            this.boundRate.SelectedIndexChanged += new System.EventHandler(this.boundRate_SelectedIndexChanged);
             // 
             // temp
             // 
@@ -99,6 +100,8 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Termometr Arduino";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
