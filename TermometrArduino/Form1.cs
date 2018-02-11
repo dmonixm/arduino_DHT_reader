@@ -20,6 +20,7 @@ namespace TermometrArduino
         {
             
             InitializeComponent();
+            boundRate.SelectedIndex = 5;
             try
             {
                 ports = SerialPort.GetPortNames();
@@ -29,12 +30,11 @@ namespace TermometrArduino
             }
 
             if (ports.Length == 0) {
-                result =  MessageBox.Show("Nie wykryto portów");
+                result =  MessageBox.Show("Nie wykryto portów. Aplikacja zostanie zamknięta");
             }
 
             if (result == DialogResult.OK) {
-                MessageBox.Show("a");
-                Environment.Exit(1);
+               //   Environment.Exit(1);
             }
 
             foreach (String port in ports) {
@@ -42,5 +42,13 @@ namespace TermometrArduino
             }
 
         }
+
+        private void comPorList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            boundRate.Visible = true;
+        }
+
+
+
     }
 }
