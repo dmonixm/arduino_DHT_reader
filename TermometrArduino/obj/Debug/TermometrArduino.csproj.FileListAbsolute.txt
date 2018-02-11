@@ -1,0 +1,9 @@
+c:\users\mmd\documents\visual studio 2013\Projects\TermometrArduino\TermometrArduino\bin\Debug\TermometrArduino.exe.config
+c:\users\mmd\documents\visual studio 2013\Projects\TermometrArduino\TermometrArduino\obj\Debug\TermometrArduino.csprojResolveAssemblyReference.cache
+c:\users\mmd\documents\visual studio 2013\Projects\TermometrArduino\TermometrArduino\obj\Debug\TermometrArduino.Form1.resources
+c:\users\mmd\documents\visual studio 2013\Projects\TermometrArduino\TermometrArduino\obj\Debug\TermometrArduino.Properties.Resources.resources
+c:\users\mmd\documents\visual studio 2013\Projects\TermometrArduino\TermometrArduino\obj\Debug\TermometrArduino.csproj.GenerateResource.Cache
+c:\users\mmd\documents\visual studio 2013\Projects\TermometrArduino\TermometrArduino\bin\Debug\TermometrArduino.exe
+c:\users\mmd\documents\visual studio 2013\Projects\TermometrArduino\TermometrArduino\bin\Debug\TermometrArduino.pdb
+c:\users\mmd\documents\visual studio 2013\Projects\TermometrArduino\TermometrArduino\obj\Debug\TermometrArduino.exe
+c:\users\mmd\documents\visual studio 2013\Projects\TermometrArduino\TermometrArduino\obj\Debug\TermometrArduino.pdb
