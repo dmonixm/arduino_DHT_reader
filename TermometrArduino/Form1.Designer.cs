@@ -36,8 +36,8 @@
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.comPorList = new System.Windows.Forms.ComboBox();
             this.boundRate = new System.Windows.Forms.ComboBox();
-            this.temperatureValue = new System.Windows.Forms.Label();
-            this.humidityValue = new System.Windows.Forms.Label();
+            this.temperatureValueDth11 = new System.Windows.Forms.Label();
+            this.humidityValueDth11 = new System.Windows.Forms.Label();
             this.temperature = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.humidity = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.button1 = new System.Windows.Forms.Button();
@@ -47,6 +47,10 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.dth11 = new System.Windows.Forms.Label();
+            this.dth22 = new System.Windows.Forms.Label();
+            this.temperatureValueDth22 = new System.Windows.Forms.Label();
+            this.humidityValueDth22 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.temperature)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.humidity)).BeginInit();
             this.SuspendLayout();
@@ -83,27 +87,27 @@
             this.boundRate.TabIndex = 1;
             this.boundRate.SelectedIndexChanged += new System.EventHandler(this.boundRate_SelectedIndexChanged);
             // 
-            // temperatureValue
+            // temperatureValueDth11
             // 
-            this.temperatureValue.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.temperatureValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.temperatureValue.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.temperatureValue.Location = new System.Drawing.Point(12, 36);
-            this.temperatureValue.Name = "temperatureValue";
-            this.temperatureValue.Size = new System.Drawing.Size(100, 50);
-            this.temperatureValue.TabIndex = 2;
-            this.temperatureValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.temperatureValueDth11.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.temperatureValueDth11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.temperatureValueDth11.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.temperatureValueDth11.Location = new System.Drawing.Point(12, 66);
+            this.temperatureValueDth11.Name = "temperatureValueDth11";
+            this.temperatureValueDth11.Size = new System.Drawing.Size(100, 50);
+            this.temperatureValueDth11.TabIndex = 2;
+            this.temperatureValueDth11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // humidityValue
+            // humidityValueDth11
             // 
-            this.humidityValue.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.humidityValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.humidityValue.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.humidityValue.Location = new System.Drawing.Point(118, 36);
-            this.humidityValue.Name = "humidityValue";
-            this.humidityValue.Size = new System.Drawing.Size(100, 50);
-            this.humidityValue.TabIndex = 3;
-            this.humidityValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.humidityValueDth11.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.humidityValueDth11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.humidityValueDth11.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.humidityValueDth11.Location = new System.Drawing.Point(118, 66);
+            this.humidityValueDth11.Name = "humidityValueDth11";
+            this.humidityValueDth11.Size = new System.Drawing.Size(100, 50);
+            this.humidityValueDth11.TabIndex = 3;
+            this.humidityValueDth11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // temperature
             // 
@@ -111,14 +115,14 @@
             this.temperature.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.temperature.Legends.Add(legend1);
-            this.temperature.Location = new System.Drawing.Point(-4, 101);
+            this.temperature.Location = new System.Drawing.Point(12, 282);
             this.temperature.Name = "temperature";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series1.Legend = "Legend1";
             series1.Name = "temp";
             this.temperature.Series.Add(series1);
-            this.temperature.Size = new System.Drawing.Size(428, 251);
+            this.temperature.Size = new System.Drawing.Size(1258, 256);
             this.temperature.TabIndex = 4;
             this.temperature.Text = "chart1";
             // 
@@ -128,7 +132,7 @@
             this.humidity.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.humidity.Legends.Add(legend2);
-            this.humidity.Location = new System.Drawing.Point(12, 355);
+            this.humidity.Location = new System.Drawing.Point(12, 544);
             this.humidity.Name = "humidity";
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
@@ -220,14 +224,64 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(125, 49);
             this.button6.TabIndex = 12;
-            this.button6.Text = "1 s";
+            this.button6.Text = "5 s";
             this.button6.UseVisualStyleBackColor = false;
+            // 
+            // dth11
+            // 
+            this.dth11.AutoSize = true;
+            this.dth11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dth11.ForeColor = System.Drawing.Color.Lime;
+            this.dth11.Location = new System.Drawing.Point(77, 36);
+            this.dth11.Name = "dth11";
+            this.dth11.Size = new System.Drawing.Size(69, 24);
+            this.dth11.TabIndex = 13;
+            this.dth11.Text = "DTH11";
+            this.dth11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dth22
+            // 
+            this.dth22.AutoSize = true;
+            this.dth22.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dth22.ForeColor = System.Drawing.Color.Lime;
+            this.dth22.Location = new System.Drawing.Point(77, 130);
+            this.dth22.Name = "dth22";
+            this.dth22.Size = new System.Drawing.Size(69, 24);
+            this.dth22.TabIndex = 14;
+            this.dth22.Text = "DTH22";
+            this.dth22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // temperatureValueDth22
+            // 
+            this.temperatureValueDth22.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.temperatureValueDth22.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.temperatureValueDth22.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.temperatureValueDth22.Location = new System.Drawing.Point(12, 181);
+            this.temperatureValueDth22.Name = "temperatureValueDth22";
+            this.temperatureValueDth22.Size = new System.Drawing.Size(100, 50);
+            this.temperatureValueDth22.TabIndex = 15;
+            this.temperatureValueDth22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // humidityValueDth22
+            // 
+            this.humidityValueDth22.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.humidityValueDth22.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.humidityValueDth22.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.humidityValueDth22.Location = new System.Drawing.Point(118, 181);
+            this.humidityValueDth22.Name = "humidityValueDth22";
+            this.humidityValueDth22.Size = new System.Drawing.Size(100, 50);
+            this.humidityValueDth22.TabIndex = 16;
+            this.humidityValueDth22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1282, 654);
+            this.ClientSize = new System.Drawing.Size(1282, 835);
+            this.Controls.Add(this.humidityValueDth22);
+            this.Controls.Add(this.temperatureValueDth22);
+            this.Controls.Add(this.dth22);
+            this.Controls.Add(this.dth11);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -237,8 +291,8 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.humidity);
             this.Controls.Add(this.temperature);
-            this.Controls.Add(this.humidityValue);
-            this.Controls.Add(this.temperatureValue);
+            this.Controls.Add(this.humidityValueDth11);
+            this.Controls.Add(this.temperatureValueDth11);
             this.Controls.Add(this.boundRate);
             this.Controls.Add(this.comPorList);
             this.Name = "Form1";
@@ -256,8 +310,8 @@
 
         private System.Windows.Forms.ComboBox comPorList;
         private System.Windows.Forms.ComboBox boundRate;
-        private System.Windows.Forms.Label temperatureValue;
-        private System.Windows.Forms.Label humidityValue;
+        private System.Windows.Forms.Label temperatureValueDth11;
+        private System.Windows.Forms.Label humidityValueDth11;
         private System.Windows.Forms.DataVisualization.Charting.Chart temperature;
         private System.Windows.Forms.DataVisualization.Charting.Chart humidity;
         private System.Windows.Forms.Button button1;
@@ -267,6 +321,10 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label dth11;
+        private System.Windows.Forms.Label dth22;
+        private System.Windows.Forms.Label temperatureValueDth22;
+        private System.Windows.Forms.Label humidityValueDth22;
     }
 }
 
