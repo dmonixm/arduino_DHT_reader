@@ -21,7 +21,7 @@ namespace TermometrArduino
         {
             
             InitializeComponent();
-            boundRate.SelectedIndex = 5;
+           // boundRate.SelectedIndex = 5;
             try
             {
                 ports = SerialPort.GetPortNames();
@@ -49,13 +49,13 @@ namespace TermometrArduino
             boundRate.Visible = true;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void boundRate_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (serialPort != null && serialPort.IsOpen) {
+                serialPort.Close();
+            }
+
             if (comPorList.SelectedIndex >= 0) {
                 serialPort = new SerialPort(comPorList.SelectedValue.ToString());
 
@@ -94,6 +94,26 @@ namespace TermometrArduino
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (serialPort != null && serialPort.IsOpen) { 
+            
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (serialPort != null && serialPort.IsOpen) {
+            
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (serialPort != null && serialPort.IsOpen) { 
+                
+            }
+        }
 
     }
 }
